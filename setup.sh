@@ -13,3 +13,4 @@ done
 
 mv src/SeedApp src/$NAME
 mv tests/SeedApp tests/$NAME
+cp config/application.php.template config/application.php
