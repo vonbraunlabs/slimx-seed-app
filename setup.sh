@@ -5,8 +5,11 @@ LOWER=$(echo $NAME | awk '{print tolower($0)}')
 
 echo "$NAME $LOWER"
 
-for dir in config/ src/ tests/ phpunit.xml.dist docker-run.sh
+for e in config/ src/ tests/ phpunit.xml.dist docker-run.sh composer.json composer.lock index.php
 do
-    sed -i "s/SeedApp/$NAME/g" $dir
-    sed -i "s/seedapp/$LOWER/g" $dir
+    sed -i "s/SeedApp/$NAME/g" `find $e -type f`
+    sed -i "s/seedapp/$LOWER/g" `find $e -type f`
 done
+
+mv src/SeedApp src/$NAME
+mv tests/SeedApp tests/$NAME
