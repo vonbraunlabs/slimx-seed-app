@@ -18,9 +18,9 @@ class DefaultController extends AbstractXController
         $handleWrongApi = [$this, 'handleApiVersionNotSpecified'];
 
         $this->pushEntrypoint(new Action(
-            'POST',
-            '/put/datapoints',
-            ['application/vnd.seedapp.v1+json' => [$this, 'putDatapointsAction']],
+            'GET',
+            '/',
+            ['application/vnd.seedapp.v1+json' => [$this, 'indexAction']],
             $handleWrongApi
         ));
     }
@@ -30,13 +30,14 @@ class DefaultController extends AbstractXController
         return $this->container->get('error')->handle($response, 1000);
     }
 
-    public function putDatapointsAction(
+    public function indexAction(
         RequestInterface $request,
         Response $response,
         array $args
     ) {
         $logger = $this->app->getContainer()->get('log');
-        $logger->info('putDatapointsAction init');
+        $logger->info('indexAction init');
+        $response->write(json_encode(['pong']));
 
         return $response;
     }
