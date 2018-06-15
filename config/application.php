@@ -13,8 +13,8 @@ return [
         ],
         'dbtest' => [
             'host' => 'mariadb',
-            'user' => 'test',
-            'pass' => 'test',
+            'user' => 'root',
+            'pass' => '',
             'dbname' => 'seedapp',
         ],
         'logger' => [
