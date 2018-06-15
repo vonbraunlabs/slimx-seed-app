@@ -11,3 +11,10 @@ script:
   - composer test
   - composer cs
   - composer phpstan
+
+services:
+  - mysql
+
+addons:
+  hosts:
+    - mariadb
