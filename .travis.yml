@@ -8,9 +8,10 @@ before_script:
   - composer install
 
 script:
-  - composer test
+  - composer lint
   - composer cs
   - composer phpstan
+#  - composer test
 
 services:
   - mysql
