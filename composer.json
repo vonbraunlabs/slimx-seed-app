@@ -18,7 +18,7 @@
     },
     "require": {
         "gabordemooij/redbean": "^5.1",
-        "vonbraunlabs/slimx": "^0.1.30",
+        "vonbraunlabs/slimx": "^0.1.31",
         "monolog/monolog": "^1.23"
     },
     "require-dev": {
